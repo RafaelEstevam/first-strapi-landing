@@ -5,14 +5,19 @@ import Heading from 'components/Heading'
 
 import content from './content'
 import * as S from './styles'
+import { ConceptProps } from 'types/api'
 
-const SectionConcepts = () => (
+type Props = {
+  landingPageConcepts: ConceptProps
+}
+
+const SectionConcepts = ({ landingPageConcepts }: Props) => (
   <Container>
     <S.Box>
-      <Heading lineBottom>Conceitos que você irá aprender</Heading>
+      <Heading lineBottom>{landingPageConcepts.sectionConceptsTitle}</Heading>
       <S.List>
-        {content.map((item) => (
-          <S.Item key={item}>{item}</S.Item>
+        {landingPageConcepts.conceptItem.map((item) => (
+          <S.Item key={item.id}>{item.conceptItemTitle}</S.Item>
         ))}
       </S.List>
     </S.Box>

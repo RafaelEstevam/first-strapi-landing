@@ -5,18 +5,23 @@ import Heading from 'components/Heading'
 
 import faq from './content'
 import * as S from './styles'
+import { FaqProps } from 'types/api'
 
-const SectionFaq = () => (
+type Props = {
+  landingPageFaq: FaqProps
+}
+
+const SectionFaq = ({ landingPageFaq }: Props) => (
   <S.Wrapper>
     <S.Content>
       <Container>
-        <Heading>FAQ</Heading>
+        <Heading>{landingPageFaq.sectionFaqTitle}</Heading>
 
         <S.Questions>
-          {faq.map(({ question, answer }, index) => (
+          {landingPageFaq.sectionFaqItems.map((item, index) => (
             <S.Question key={index}>
-              <Heading lineBottom>{question}</Heading>
-              <div dangerouslySetInnerHTML={{ __html: answer }} />
+              <Heading lineBottom>{item.faqItemTitle}</Heading>
+              <div dangerouslySetInnerHTML={{ __html: item.faqItemContent }} />
             </S.Question>
           ))}
         </S.Questions>

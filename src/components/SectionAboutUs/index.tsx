@@ -6,20 +6,24 @@ import ProfileCard from 'components/ProfileCard'
 
 import content from './content'
 import * as S from './styles'
+import { ProfileProps } from 'types/api'
 
-const SectionAboutUs = () => (
+type Props = {
+  landingPageProfiles: ProfileProps
+}
+
+const SectionAboutUs = ({ landingPageProfiles }: Props) => (
   <Container>
-    <Heading reverseColor>Quem somos nós?</Heading>
-
+    <Heading reverseColor>{landingPageProfiles.sectionProfilesTitle}</Heading>
     <S.Content>
-      {content.map((profile) => (
+      {landingPageProfiles.authors.map((item) => (
         <ProfileCard
-          key={profile.name}
-          name={profile.name}
-          role={profile.role}
-          image={profile.image}
-          socialLinks={profile.socialLinks}
-          description={profile.description}
+          key={item.id}
+          name={item.authorTitle}
+          role={item.authorSubtitle}
+          image={item.authorImg}
+          socialLinks={item.authorNetwork}
+          description={item.authorContent}
         />
       ))}
     </S.Content>

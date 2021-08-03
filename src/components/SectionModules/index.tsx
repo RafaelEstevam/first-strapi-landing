@@ -6,15 +6,24 @@ import CardModule from 'components/CardModule'
 
 import content from './content'
 import * as S from './styles'
+import { ModuleProps } from 'types/api'
 
-const SectionModules = () => (
+type Props = {
+  landingPageModules: ModuleProps
+}
+
+const SectionModules = ({ landingPageModules }: Props) => (
   <Container>
-    <Heading reverseColor>Módulos deste curso</Heading>
+    <Heading reverseColor>{landingPageModules.sectionModuleTitle}</Heading>
 
     <S.Content>
-      {content.map(({ title, subtitle, description }, index) => (
-        <CardModule key={index} title={title} subTitle={subtitle}>
-          <div dangerouslySetInnerHTML={{ __html: description }} />
+      {landingPageModules.sectionModuleCards.map((item, index) => (
+        <CardModule
+          key={item.id}
+          title={item.cardTitle}
+          subTitle={item.cardDescription}
+        >
+          <div dangerouslySetInnerHTML={{ __html: item.cardContent }} />
         </CardModule>
       ))}
     </S.Content>

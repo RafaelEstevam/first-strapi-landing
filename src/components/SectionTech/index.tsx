@@ -5,16 +5,26 @@ import Container from 'components/Container'
 
 import icons from './content'
 import * as S from './styles'
+import { TechProps } from 'types/api'
+import { getImageUrl } from 'utils/getImageUrl'
 
-const SectionTech = () => (
+type Props = {
+  landingPageTechs: TechProps
+}
+
+const SectionTech = ({ landingPageTechs }: Props) => (
   <S.Wrapper>
     <Container>
-      <Heading reverseColor>Tecnologias utilizadas</Heading>
+      <Heading reverseColor>{landingPageTechs.sectionTechsTitle}</Heading>
       <S.IconsContainer>
-        {icons.map(({ name, image }) => (
-          <S.Icon key={name}>
-            <S.Icons src={`img/tech/${image}`} alt={name} loading="lazy" />
-            <S.IconsName>{name}</S.IconsName>
+        {landingPageTechs.sectionComponentIcons.map((item) => (
+          <S.Icon key={item.id}>
+            <S.Icons
+              src={getImageUrl(item.iconMedia.url)}
+              alt={item.iconMedia.alternativeText}
+              loading="lazy"
+            />
+            <S.IconsName>{item.iconLabel}</S.IconsName>
           </S.Icon>
         ))}
       </S.IconsContainer>

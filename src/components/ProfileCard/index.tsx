@@ -12,8 +12,8 @@ const icons = {
 }
 
 type socialLinks = {
-  slug: string
-  link: string
+  profileCardNetworkLinksSelect: string
+  profileCardNetworkLinksUrl: string
 }
 
 type Props = {
@@ -32,7 +32,7 @@ const ProfileCard: React.FC<Props> = ({
   description
 }) => (
   <S.Card key={name}>
-    <S.Image>
+    {/* <S.Image>
       <source
         srcSet={require(`@images/authors/${image}?webp`)}
         type="image/webp"
@@ -43,19 +43,28 @@ const ProfileCard: React.FC<Props> = ({
         loading="lazy"
         alt={name}
       />
-    </S.Image>
+    </S.Image> */}
     <S.Name>{name}</S.Name>
     <S.Role>{role}</S.Role>
     <S.SocialLinks>
       {socialLinks.map((item) => (
-        <S.Link key={item.link}>
-          <a href={item.link} title={item.slug}>
-            {icons[item.slug]}
+        <S.Link key={item.profileCardNetworkLinksUrl}>
+          <a
+            href={item.profileCardNetworkLinksUrl}
+            title={item.profileCardNetworkLinksSelect}
+          >
+            {icons[item.profileCardNetworkLinksSelect]}
           </a>
         </S.Link>
       ))}
     </S.SocialLinks>
-    <S.Description>{description}</S.Description>
+    <S.Description>
+      <div
+        dangerouslySetInnerHTML={{
+          __html: description
+        }}
+      />
+    </S.Description>
   </S.Card>
 )
 
