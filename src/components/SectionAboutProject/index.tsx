@@ -27,11 +27,11 @@ const SectionAboutProject = ({ landingPageAbout }: Props) => (
           />
         </S.Image>
         <div>
-          <Heading>{landingPageAbout.sectionAboutTitle}</Heading>
+          <Heading>{landingPageAbout?.sectionAboutTitle}</Heading>
           <S.Text>
             <div
               dangerouslySetInnerHTML={{
-                __html: landingPageAbout.sectionAboutContent
+                __html: landingPageAbout?.sectionAboutContent
               }}
             />
           </S.Text>

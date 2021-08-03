@@ -12,12 +12,12 @@ type Props = {
 
 const SectionAgenda = ({ landingPageSchedule }: Props) => (
   <Container id="agenda">
-    <Heading reverseColor>{landingPageSchedule.sectionScheduleTitle}</Heading>
+    <Heading reverseColor>{landingPageSchedule?.sectionScheduleTitle}</Heading>
     <S.Text>
       <p>
         <div
           dangerouslySetInnerHTML={{
-            __html: landingPageSchedule.sectionScheduleContent1
+            __html: landingPageSchedule?.sectionScheduleContent1
           }}
         />
       </p>
@@ -25,7 +25,7 @@ const SectionAgenda = ({ landingPageSchedule }: Props) => (
       <p>
         <div
           dangerouslySetInnerHTML={{
-            __html: landingPageSchedule.sectionScheduleContent2
+            __html: landingPageSchedule?.sectionScheduleContent2
           }}
         />
       </p>

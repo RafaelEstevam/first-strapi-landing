@@ -14,9 +14,9 @@ type Props = {
 
 const SectionAboutUs = ({ landingPageProfiles }: Props) => (
   <Container>
-    <Heading reverseColor>{landingPageProfiles.sectionProfilesTitle}</Heading>
+    <Heading reverseColor>{landingPageProfiles?.sectionProfilesTitle}</Heading>
     <S.Content>
-      {landingPageProfiles.authors.map((item) => (
+      {landingPageProfiles?.authors.map((item) => (
         <ProfileCard
           key={item.id}
           name={item.authorTitle}

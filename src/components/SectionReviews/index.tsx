@@ -38,19 +38,21 @@ type Props = {
 const SectionReviews = ({ landingPageTestimonials }: Props) => (
   <Container>
     <Heading reverseColor>
-      {landingPageTestimonials.sectionTestimonialTitle}
+      {landingPageTestimonials?.sectionTestimonialTitle}
     </Heading>
 
     <S.Content>
       <Slider {...settings}>
-        {landingPageTestimonials.sectionTestimonialsCards.map((item, index) => (
-          <ReviewCard
-            key={item.id}
-            name={item.testimonialCardTitle}
-            description={item.testimonialCardContent}
-            id={index}
-          />
-        ))}
+        {landingPageTestimonials?.sectionTestimonialsCards.map(
+          (item, index) => (
+            <ReviewCard
+              key={item.id}
+              name={item.testimonialCardTitle}
+              description={item.testimonialCardContent}
+              id={index}
+            />
+          )
+        )}
       </Slider>
     </S.Content>
   </Container>

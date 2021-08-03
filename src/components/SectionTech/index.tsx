@@ -15,9 +15,9 @@ type Props = {
 const SectionTech = ({ landingPageTechs }: Props) => (
   <S.Wrapper>
     <Container>
-      <Heading reverseColor>{landingPageTechs.sectionTechsTitle}</Heading>
+      <Heading reverseColor>{landingPageTechs?.sectionTechsTitle}</Heading>
       <S.IconsContainer>
-        {landingPageTechs.sectionComponentIcons.map((item) => (
+        {landingPageTechs?.sectionComponentIcons.map((item) => (
           <S.Icon key={item.id}>
             <S.Icons
               src={getImageUrl(item.iconMedia.url)}

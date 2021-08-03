@@ -24,22 +24,22 @@ const SectionHero = ({ logo, landingPageHeader }: Props) => (
 
       <S.Content>
         <S.TextBlock>
-          <S.Title>{landingPageHeader.headerTitle}</S.Title>
-          <S.Description>{landingPageHeader.headerDescription}</S.Description>
+          <S.Title>{landingPageHeader?.headerTitle}</S.Title>
+          <S.Description>{landingPageHeader?.headerDescription}</S.Description>
           <S.ButtonWrapper>
             <Button
-              href={landingPageHeader.button.buttonUrl}
+              href={landingPageHeader?.button.buttonUrl}
               onClick={onClick}
               wide
             >
-              {landingPageHeader.button.buttonLabel}
+              {landingPageHeader?.button.buttonLabel}
             </Button>
           </S.ButtonWrapper>
         </S.TextBlock>
 
         <S.Image
-          src={getImageUrl(landingPageHeader.headerImg.url)}
-          alt={landingPageHeader.headerImg.alternativeText}
+          src={getImageUrl(landingPageHeader?.headerImg.url)}
+          alt={landingPageHeader?.headerImg.alternativeText}
         />
       </S.Content>
     </Container>

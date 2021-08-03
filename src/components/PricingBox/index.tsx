@@ -10,7 +10,7 @@ const onClick = () =>
   gaEvent({ action: 'click', category: 'buy', label: 'pricing box button' })
 
 const PricingBox = ({ landingPagePriceCard }) =>
-  landingPagePriceCard.map((item, index) => (
+  landingPagePriceCard?.map((item, index) => (
     <S.Box key={index}>
       <S.Prices>
         <S.FullPrice>{item.priceCardLabel}</S.FullPrice>

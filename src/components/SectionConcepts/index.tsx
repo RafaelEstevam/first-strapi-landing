@@ -14,9 +14,9 @@ type Props = {
 const SectionConcepts = ({ landingPageConcepts }: Props) => (
   <Container>
     <S.Box>
-      <Heading lineBottom>{landingPageConcepts.sectionConceptsTitle}</Heading>
+      <Heading lineBottom>{landingPageConcepts?.sectionConceptsTitle}</Heading>
       <S.List>
-        {landingPageConcepts.conceptItem.map((item) => (
+        {landingPageConcepts?.conceptItem.map((item) => (
           <S.Item key={item.id}>{item.conceptItemTitle}</S.Item>
         ))}
       </S.List>

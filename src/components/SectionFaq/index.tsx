@@ -15,10 +15,10 @@ const SectionFaq = ({ landingPageFaq }: Props) => (
   <S.Wrapper>
     <S.Content>
       <Container>
-        <Heading>{landingPageFaq.sectionFaqTitle}</Heading>
+        <Heading>{landingPageFaq?.sectionFaqTitle}</Heading>
 
         <S.Questions>
-          {landingPageFaq.sectionFaqItems.map((item, index) => (
+          {landingPageFaq?.sectionFaqItems.map((item, index) => (
             <S.Question key={index}>
               <Heading lineBottom>{item.faqItemTitle}</Heading>
               <div dangerouslySetInnerHTML={{ __html: item.faqItemContent }} />

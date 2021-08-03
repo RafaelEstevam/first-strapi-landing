@@ -14,10 +14,10 @@ type Props = {
 
 const SectionModules = ({ landingPageModules }: Props) => (
   <Container>
-    <Heading reverseColor>{landingPageModules.sectionModuleTitle}</Heading>
+    <Heading reverseColor>{landingPageModules?.sectionModuleTitle}</Heading>
 
     <S.Content>
-      {landingPageModules.sectionModuleCards.map((item, index) => (
+      {landingPageModules?.sectionModuleCards.map((item, index) => (
         <CardModule
           key={item.id}
           title={item.cardTitle}
