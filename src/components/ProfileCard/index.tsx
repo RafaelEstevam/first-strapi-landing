@@ -3,6 +3,8 @@ import React from 'react'
 import { GrGithub } from 'react-icons/gr'
 import { FaDribbble, FaTwitter } from 'react-icons/fa'
 
+import { ImgProps } from 'types/api'
+
 import * as S from './styles'
 
 const icons = {
@@ -12,6 +14,8 @@ const icons = {
 }
 
 type socialLinks = {
+  id: string
+  profileCardNetworkLinksImg: ImgProps
   profileCardNetworkLinksSelect: string
   profileCardNetworkLinksUrl: string
 }
@@ -19,7 +23,6 @@ type socialLinks = {
 type Props = {
   name: string
   role: string
-  image: string
   socialLinks: socialLinks[]
   description: string
 }
@@ -27,7 +30,6 @@ type Props = {
 const ProfileCard: React.FC<Props> = ({
   name,
   role,
-  image,
   socialLinks,
   description
 }) => (

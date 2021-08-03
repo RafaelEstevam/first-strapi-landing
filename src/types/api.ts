@@ -4,17 +4,19 @@ export type ImgProps = {
   url: string
 }
 
+type SocialLinks = {
+  id: string
+  profileCardNetworkLinksImg: ImgProps
+  profileCardNetworkLinksSelect: string
+  profileCardNetworkLinksUrl: string
+}
+
 export type AuthorProps = {
   id: string
   authorImg: ImgProps
   authorTitle: string
   authorSubtitle: string
-  authorNetwork: {
-    id: string
-    profileCardNetworkLinksImg: ImgProps
-    profileCardNetworkLinksSelect: string
-    profileCardNetworkLinksUrl: string
-  }
+  authorNetwork: SocialLinks[]
   authorContent: string
 }
 
@@ -36,31 +38,37 @@ export type HeaderProps = {
   button: ButtonProps
 }
 
+export type ComponentIcon = {
+  id: string
+  iconMedia: ImgProps
+  iconLabel: string
+}
+
 export type TechProps = {
   sectionTechsTitle: string
-  sectionComponentIcons: {
-    id: string
-    iconMedia: ImgProps
-    iconLabel: string
-  }
+  sectionComponentIcons: ComponentIcon[]
+}
+
+export type ConceptItems = {
+  id: string
+  conceptItemTitle: string
 }
 
 export type ConceptProps = {
   sectionConceptsTitle: string
-  conceptItem: {
-    id: string
-    conceptItemTitle: string
-  }
+  conceptItem: ConceptItems[]
+}
+
+export type ModuleCards = {
+  id: string
+  cardTitle: string
+  cardDescription: string
+  cardContent: string
 }
 
 export type ModuleProps = {
   sectionModuleTitle: string
-  sectionModuleCards: {
-    id: string
-    cardTitle: string
-    cardDescription: string
-    cardContent: string
-  }
+  sectionModuleCards: ModuleCards[]
 }
 
 export type ScheduleProps = {
@@ -69,13 +77,15 @@ export type ScheduleProps = {
   sectionScheduleContent2: string
 }
 
+export type PricePropsCards = {
+  id: string
+  conceptItemTitle: string
+}
+
 export type PriceProps = {
   priceCardLabel: string
   priceCardTitle: string
-  priceCardItems: {
-    id: string
-    conceptItemTitle: string
-  }
+  priceCardItems: PricePropsCards[]
   priceCardButton: {
     priceCardButtonLabel: string
     priceCardButtonPrice: string
@@ -86,26 +96,30 @@ export type PriceProps = {
 
 export type ProfileProps = {
   sectionProfilesTitle: string
-  authors: AuthorProps
+  authors: AuthorProps[]
+}
+
+export type TestimonialCard = {
+  id: string
+  testimonialCardImg: ImgProps
+  testimonialCardTitle: string
+  testimonialCardContent: string
 }
 
 export type TestimonialProps = {
   sectionTestimonialTitle: string
-  sectionTestimonialsCards: {
-    id: string
-    testimonialCardImg: ImgProps
-    testimonialCardTitle: string
-    testimonialCardContent: string
-  }
+  sectionTestimonialsCards: TestimonialCard[]
+}
+
+export type FaqItems = {
+  id: string
+  faqItemTitle: string
+  faqItemContent: string
 }
 
 export type FaqProps = {
   sectionFaqTitle: string
-  sectionFaqItems: {
-    id: string
-    faqItemTitle: string
-    faqItemContent: string
-  }
+  sectionFaqItems: FaqItems[]
 }
 
 export type LandingPageProps = {

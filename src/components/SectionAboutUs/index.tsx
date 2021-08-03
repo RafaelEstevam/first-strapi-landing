@@ -21,7 +21,6 @@ const SectionAboutUs = ({ landingPageProfiles }: Props) => (
           key={item.id}
           name={item.authorTitle}
           role={item.authorSubtitle}
-          image={item.authorImg}
           socialLinks={item.authorNetwork}
           description={item.authorContent}
         />

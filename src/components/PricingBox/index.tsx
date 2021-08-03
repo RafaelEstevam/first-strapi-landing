@@ -7,15 +7,15 @@ import * as S from './styles'
 import { PriceProps } from 'types/api'
 
 type Props = {
-  landingPagePriceCard: PriceProps
+  landingPagePriceCard: PriceProps[]
 }
 
 const onClick = () =>
   gaEvent({ action: 'click', category: 'buy', label: 'pricing box button' })
 
 const PricingBox = ({ landingPagePriceCard }: Props) =>
-  landingPagePriceCard.map((item) => (
-    <S.Box>
+  landingPagePriceCard.map((item, index) => (
+    <S.Box key={index}>
       <S.Prices>
         <S.FullPrice>{item.priceCardLabel}</S.FullPrice>
         <S.DiscountPrice>{item.priceCardTitle}</S.DiscountPrice>
