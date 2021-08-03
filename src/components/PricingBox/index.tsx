@@ -6,14 +6,10 @@ import { gaEvent } from 'utils/ga'
 import * as S from './styles'
 import { PriceProps } from 'types/api'
 
-type Props = {
-  landingPagePriceCard: PriceProps[]
-}
-
 const onClick = () =>
   gaEvent({ action: 'click', category: 'buy', label: 'pricing box button' })
 
-const PricingBox = ({ landingPagePriceCard }: Props) =>
+const PricingBox = ({ landingPagePriceCard }) =>
   landingPagePriceCard.map((item, index) => (
     <S.Box key={index}>
       <S.Prices>
