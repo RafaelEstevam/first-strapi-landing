@@ -4,13 +4,12 @@ import Button from 'components/Button'
 import { gaEvent } from 'utils/ga'
 
 import * as S from './styles'
-import { PriceProps } from 'types/api'
 
 const onClick = () =>
   gaEvent({ action: 'click', category: 'buy', label: 'pricing box button' })
 
-const PricingBox = ({ landingPagePriceCard }) =>
-  landingPagePriceCard?.map((item, index) => (
+const PricingBox = ({ landingPagePriceCard }) => {
+  return landingPagePriceCard?.map((item, index) => (
     <S.Box key={index}>
       <S.Prices>
         <S.FullPrice>{item.priceCardLabel}</S.FullPrice>
@@ -41,5 +40,6 @@ const PricingBox = ({ landingPagePriceCard }) =>
       </Button>
     </S.Box>
   ))
+}
 
 export default PricingBox
